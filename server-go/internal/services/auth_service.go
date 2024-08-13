@@ -35,7 +35,6 @@ func (s *AuthService) RegisterUser(ctx context.Context, userDTO *dto.RegisterUse
 		return "", "", err
 	}
 
-	// Генерация токенов
 	accessToken, err := tokens.GenerateAccessToken(s.jwtSecret, user.ID.Hex(), 15*time.Minute)
 	if err != nil {
 		mal.Error("Error to generate at")
@@ -67,4 +66,24 @@ func (s *AuthService) LogIn(ctx context.Context, userDTO *dto.LoginUserDTO) (str
 	if !CheckPassword(user.Password, userDTO.Password) {
 		return "", "", fmt.Errorf("password don't match")
 	}
+
+	accessToken, err := tokens.GenerateAccessToken(s.jwtSecret, user.ID.Hex(), 15*time.Minute)
+	if err != nil {
+		mal.Error("Error to generate at")
+		return "", "", err
+	}
+
+	refreshToken, err := tokens.GenerateRefreshToken(s.jwtSecret, user.ID.Hex(), 7*24*time.Hour)
+	if err != nil {
+		mal.Error("Error to generate rt")
+		return "", "", err
+	}
+
+	err = s.tokenService.SaveRefreshToken(ctx, user.ID, refreshToken)
+	if err != nil {
+		mal.Error("Error to save RT")
+		return "", "", err
+	}
+
+	return accessToken, refreshToken, nil
 }

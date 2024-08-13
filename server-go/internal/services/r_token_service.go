@@ -3,16 +3,16 @@ package services
 import (
 	"context"
 	"go.mongodb.org/mongo-driver/bson/primitive"
-	"server/internal/db/mongo"
+	"server/internal/db/interfaces"
 	"server/internal/models"
 	"time"
 )
 
 type RTokenService struct {
-	repo *mongo.TokenRepository
+	repo interfaces.TokenRepositoryInterface
 }
 
-func NewRTokenService(repo *mongo.TokenRepository) *RTokenService {
+func NewRTokenService(repo interfaces.TokenRepositoryInterface) *RTokenService {
 	return &RTokenService{repo: repo}
 }
 

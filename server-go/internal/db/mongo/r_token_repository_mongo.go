@@ -4,6 +4,7 @@ import (
 	"context"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
+	"server/internal/db/interfaces"
 	"server/internal/models"
 )
 
@@ -11,7 +12,7 @@ type TokenRepository struct {
 	collection *mongo.Collection
 }
 
-func NewTokenRepository(db *mongo.Database) *TokenRepository {
+func NewTokenRepository(db *mongo.Database) interfaces.TokenRepositoryInterface {
 	return &TokenRepository{
 		collection: db.Collection("refresh_tokens"),
 	}
