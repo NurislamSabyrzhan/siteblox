@@ -1,0 +1,38 @@
+.aside {
+  // Стили для aside
+  background-color: #ffffff;
+  border-right: 1px solid #E2E8F0;
+}
+
+.navLink {
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  position: relative;
+
+  .line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 2.7rem;
+    width: 5px;
+    background: #2F6FED;
+    border-radius: 0 10px 10px 0;
+    opacity: 0; // Скрываем по умолчанию
+    transition: opacity 0.05s ease;
+  }
+
+  .icon {
+    margin-right: 0px;
+  }
+
+  // Селектор по атрибуту aria-current
+  &[aria-current="page"] {
+    .line {
+      opacity: 1; // Показываем линию, если ссылка активна
+    }
+  }
+}

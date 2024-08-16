@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3bc3e2ed-4859-4e60-bea7-b30a81771fa3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../client-astro/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/.vscode/extensions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/.vscode/launch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/astro.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/public/favicon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/src/components/Card.astro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/src/env.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/src/layouts/AuthLayout.astro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/src/layouts/Layout.astro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/src/pages/auth/login.astro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/src/pages/index.astro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-astro/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/components/ui/button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/components/ui/card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/components/ui/input.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/components/ui/label.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/entry.client.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/entry.server.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/lib/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/root.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/routes/_auth.login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/routes/_auth.signup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/routes/_auth.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/routes/_index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/app/tailwind.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/components.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/tailwind.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-remix/vite.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-solid/src/components/Counter.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-solid/src/components/Counter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-solid/src/routes/[...404].tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-solid/src/routes/about.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-solid/src/routes/auth/login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-solid/src/routes/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-solid/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client-solid/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-solid/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client-solid/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-solid/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client-solid/src/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client-solid/src/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client-solid/src/app.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2kerj6Upa9lVYb4TY4LGwp4PUiq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/nur/dev/siteblox/client-next",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3bc3e2ed-4859-4e60-bea7-b30a81771fa3" name="Changes" comment="" />
+      <created>1723655016016</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723655016016</updated>
+      <workItem from="1723655017016" duration="139000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/Kesio-dev/mal"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"log"
 	"server/internal/db/mongo"
 	"server/internal/http/auth"
@@ -37,9 +38,14 @@ func main() {
 	authController := auth.NewAuthController(authService)
 
 	app := fiber.New()
+
+	app.Use(cors.New(cors.Config{
+		AllowOrigins:     "http://localhost:5173",
+		AllowCredentials: true,
+	}))
 	user.NewRouter(app, userController)
 	auth.NewRouter(app, authController)
 
 	mal.Info("Сервер запущен на порту 8080")
-	log.Fatal(app.Listen(":8080"))
+	log.Fatal(app.Listen(":5000"))
 }

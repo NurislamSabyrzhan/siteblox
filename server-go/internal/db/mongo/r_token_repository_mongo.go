@@ -33,3 +33,8 @@ func (r *TokenRepository) Delete(ctx context.Context, token string) error {
 	_, err := r.collection.DeleteOne(ctx, bson.M{"token": token})
 	return err
 }
+
+func (r *TokenRepository) DeleteAll(ctx context.Context, userId string) error {
+	_, err := r.collection.DeleteMany(ctx, bson.M{"_id": userId})
+	return err
+}

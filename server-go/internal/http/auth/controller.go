@@ -4,6 +4,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"server/internal/http/auth/dto"
 	"server/internal/services"
+	"time"
 )
 
 type Controller struct {
@@ -67,6 +68,9 @@ func (c *Controller) LogIn(ctx *fiber.Ctx) error {
 		if err.Error() == "password don't match" {
 			return ctx.Status(fiber.StatusForbidden).JSON(fiber.Map{"error": err.Error()})
 		}
+		if err.Error() == "user not found" {
+			return ctx.Status(fiber.StatusNotFound).JSON(fiber.Map{"error": err.Error()})
+		}
 		return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": err.Error()})
 	}
 
@@ -92,4 +96,40 @@ func (c *Controller) LogIn(ctx *fiber.Ctx) error {
 		"at": at,
 		"rt": rt,
 	})
+}
+
+func (c *Controller) LogOut(ctx *fiber.Ctx) error {
+	//at := ctx.Cookies("at")
+	rt := ctx.Cookies("rt")
+
+	err := c.authService.DeleteCookie(ctx.Context(), rt)
+	if err != nil {
+		return err
+	}
+
+	ctx.Cookie(&fiber.Cookie{
+		Name:     "at",
+		Value:    "",
+		MaxAge:   -1,
+		Expires:  time.Now().Add(-time.Hour),
+		HTTPOnly: true,
+		SameSite: "Lax",
+		Secure:   false,
+	})
+
+	ctx.Cookie(&fiber.Cookie{
+		Name:     "rt",
+		Value:    "",
+		MaxAge:   -1,
+		Expires:  time.Now().Add(-time.Hour),
+		HTTPOnly: true,
+		SameSite: "Lax",
+		Secure:   false,
+	})
+
+	return ctx.Status(fiber.StatusCreated).JSON("ok")
+}
+
+func (c *Controller) LogOutFromAll(ctx *fiber.Ctx) error {
+	return ctx.JSON("ok")
 }

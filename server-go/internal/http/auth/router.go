@@ -7,9 +7,8 @@ func NewRouter(app *fiber.App, controller *Controller) *fiber.App {
 
 	api.Post("/register", controller.Register)
 	api.Post("/login", controller.LogIn)
-	//api.Get("/:id", controller.GetUserByID)
-	//app.Put("/", controller.UpdateUser)
-	//app.Delete("/:id", controller.DeleteUser)
+	api.Post("/logout", controller.LogOut)
+	api.Post("/logoutAll", controller.LogOutFromAll)
 
 	return app
 }

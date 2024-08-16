@@ -2,6 +2,7 @@ package services
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"github.com/Kesio-dev/mal"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -60,6 +61,9 @@ func (s *AuthService) LogIn(ctx context.Context, userDTO *dto.LoginUserDTO) (str
 	user, err := s.userService.GetUserByEmail(ctx, userDTO.Email)
 	if err != nil {
 		mal.Error("Error to get user from repo")
+		if errors.Is(err, mongo.ErrNoDocuments) {
+			return "", "", errors.New("user not found")
+		}
 		return "", "", err
 	}
 
@@ -86,4 +90,20 @@ func (s *AuthService) LogIn(ctx context.Context, userDTO *dto.LoginUserDTO) (str
 	}
 
 	return accessToken, refreshToken, nil
+}
+
+func (s *AuthService) DeleteCookie(ctx context.Context, rt string) error {
+	err := s.tokenService.DeleteToken(ctx, rt)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (s *AuthService) DeleteAllCookies(ctx context.Context, userId string) error {
+	err := s.tokenService.DeleteAllTokens(ctx, userId)
+	if err != nil {
+		return err
+	}
+	return nil
 }

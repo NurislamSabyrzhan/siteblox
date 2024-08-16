@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+
+  .sidebar {
+    position: fixed;
+    inset-y: 0;
+    left: 0;
+    z-index: 10;
+    width: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(var(--background));
+    border-right: 1px solid hsl(var(--border));
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+
+    @media (max-width: 640px) {
+      display: none;
+    }
+
+    .menuButton {
+      display: none;
+      @media (max-width: 640px) {
+        display: block;
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 20;
+      }
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px 0;
+
+      .navLink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        transition: color 0.2s;
+
+        &.active {
+          background-color: hsl(var(--accent));
+          color: hsl(var(--accent-foreground));
+        }
+
+        &.inactive {
+          color: hsl(var(--muted-foreground));
+
+          &:hover {
+            color: hsl(var(--foreground));
+          }
+        }
+      }
+    }
+
+    .navBottom {
+      margin-top: auto;
+      padding: 16px 0;
+    }
+  }
+
+  .mainContent {
+    flex: 1;
+    margin-left: 56px;
+
+    @media (max-width: 640px) {
+      margin-left: 0;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background-color: hsl(var(--background));
+      border-bottom: 1px solid hsl(var(--border));
+      padding: 0 16px;
+      height: 56px;
+
+      @media (max-width: 640px) {
+        position: static;
+        height: auto;
+        border: none;
+        background-color: transparent;
+      }
+    }
+
+    .content {
+      padding: 16px;
+      background-image: radial-gradient(circle, #cbcbcb 1px, transparent 1px);
+      background-size: 20px 20px;
+      min-height: calc(100vh - 56px);
+
+      @media (max-width: 640px) {
+        padding: 8px;
+      }
+    }
+  }
+}

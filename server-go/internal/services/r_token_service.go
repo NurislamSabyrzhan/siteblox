@@ -37,3 +37,7 @@ func (s *RTokenService) ValidateToken(ctx context.Context, tokenStr string) (*mo
 func (s *RTokenService) DeleteToken(ctx context.Context, tokenStr string) error {
 	return s.repo.Delete(ctx, tokenStr)
 }
+
+func (s *RTokenService) DeleteAllTokens(ctx context.Context, userId string) error {
+	return s.repo.DeleteAll(ctx, userId)
+}
